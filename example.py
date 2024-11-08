@@ -87,13 +87,23 @@ class Interpreter:
 
 def main():
     # Example program
+    # example_program = [
+    #     "seq",
+    #     ["set", "x", 100],
+    #     ["set", "two", ["func", [], ["set", "x", 42], ["call", "one", ["get", "x"]]]],
+    #     ["set", "one", ["func", ["y"], ["print", ["get", "y"]]]],
+    #     ["call", "two"]
+    # ]
+
     example_program = [
         "seq",
         ["set", "x", 100],
-        ["set", "two", ["func", [], ["set", "x", 42], ["call", "one", ["get", "x"]]]],
-        ["set", "one", ["func", ["y"], ["print", ["get", "y"]]]],
+        ["set", "two", ["func", [], ["set", "x", 42], ["call", "one"]]],
+        ["set", "one", ["func", [], ["print", ["get", "x"]]]],
         ["call", "two"]
     ]
+
+
 
     interpreter = Interpreter()
     
